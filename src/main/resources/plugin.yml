@@ -1,0 +1,8 @@
+name: TDoD
+version: '0.0'
+main: topen.ketoglutaric.TDoD.TDoD
+api-version: '1.21'
+prefix: [ 3DoD ]
+load: STARTUP
+authors: [ dotoRi__muuk ]
+description: Three Days of Determination, 작심삼일
