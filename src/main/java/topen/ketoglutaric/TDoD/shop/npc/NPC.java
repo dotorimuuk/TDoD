@@ -11,20 +11,39 @@ public class NPC {
     private final ProtocolManager protocolManager;
     private final UUID uuid;
     private final int entityId;
-    private final String name;
+    private final String displayname;
     private final Location location;
+    private final String skinPlayer;
+
+    public int getEntityId() {
+        return entityId;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public String getDisplayName() {
+        return displayname;
+    }
+    
+    public UUID getUuid() {
+        return uuid;
+    }
 
 
     public NPC(
             ProtocolManager protocolManager,
             UUID uuid,
             int entityId,
-            String name,
+            String displayname,
+            String skinPlayer,
             Location location) {
         this.protocolManager = protocolManager;
         this.uuid = uuid;
         this.entityId = entityId;
-        this.name = name;
+        this.displayname = displayname;
+        this.skinPlayer = skinPlayer;
         this.location = location;
     }
 
@@ -33,7 +52,7 @@ public class NPC {
         EntitySpawn spawnEntity = new EntitySpawn(protocolManager, uuid, entityId);
         EntityMetadata metadata = new EntityMetadata(protocolManager);
 
-        updateInfo.playerInfoUpdate(player, name);
+        updateInfo.playerInfoUpdate(player, displayname, skinPlayer);
         spawnEntity.spawnEntity(player, location);
         metadata.sendMeta(player, entityId);
     }

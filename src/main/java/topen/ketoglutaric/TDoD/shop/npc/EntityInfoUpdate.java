@@ -37,13 +37,13 @@ public class EntityInfoUpdate {
         this.uuid = uuid;
     }
 
-    public void playerInfoUpdate(Player player, String nameString) {
+    public void playerInfoUpdate(Player player, String nameString, String skiString) {
 
         PacketContainer npc = protocolManager.createPacket(PacketType.Play.Server.PLAYER_INFO);
         Set<EnumWrappers.PlayerInfoAction> playerInfoActionSet = new HashSet<>();
 
         WrappedGameProfile wrappedGameProfile = new WrappedGameProfile(uuid, nameString);
-        WrappedSignedProperty property = getProperty(nameString);
+        WrappedSignedProperty property = getProperty(skiString);
         wrappedGameProfile.getProperties().clear();
         wrappedGameProfile.getProperties().put("textures", property);
 

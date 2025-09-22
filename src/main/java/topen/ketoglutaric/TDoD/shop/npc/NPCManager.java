@@ -17,8 +17,8 @@ public class NPCManager {
         this.manager = manager;
     }
 
-    public int createNPCPlayer(String name, Location location) {
-        NPC npc = new NPC(manager, UUID.randomUUID(), entityId, name, location);
+    public int createNPCPlayer(String display, String skin, Location location) {
+        NPC npc = new NPC(manager, UUID.randomUUID(), entityId, display, skin, location);
         npcMap.put(entityId, npc);
         return entityId++;
     }

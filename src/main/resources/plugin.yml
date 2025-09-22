@@ -6,3 +6,7 @@ prefix: [ 3DoD ]
 load: STARTUP
 authors: [ dotoRi__muuk ]
 description: '잡다합니다 !'
+
+commands:
+  npc:
+    usage: 'npc [add/remove/list] <args>'
